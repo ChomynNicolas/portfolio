@@ -1,0 +1,45 @@
+body,
+html,
+#root {
+  height: 100%;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.element {
+  position: absolute;
+  
+  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 18px;
+  
+}
+
+.iconoAnimado{
+  transition: all 2s ease;
+  animation: vibrate 2.5s infinite;
+}
+
+@keyframes vibrate {
+  0% {
+    transform: scale(1);
+  }
+  25% {
+    transform: scale(1.1);
+  }
+  50% {
+    transform: scale(1);
+  }
+  75% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}

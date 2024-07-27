@@ -1,0 +1,27 @@
+/* styles/Home.module.css */
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.centerElement {
+  position: relative;
+}
+
+.guideButton {
+  background-color: #0070f3;
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+.guideButton:hover {
+  background-color: #005bb5;
+}
