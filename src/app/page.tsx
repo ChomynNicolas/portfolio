@@ -1,5 +1,6 @@
-
+"use client";
 import { AnimatedElement } from "@/components/AnimatedElement/AnimatedElement";
+import { Proyectos } from "@/components/Proyectos/Proyectos";
 
 import {
   FaArrowAltCircleDown,
@@ -8,58 +9,88 @@ import {
   FaArrowAltCircleUp,
   FaCss3Alt,
   FaGitAlt,
+  FaGithub,
   FaHtml5,
+  FaLinkedin,
   FaNodeJs,
   FaReact,
 } from "react-icons/fa";
 import { GrMysql } from "react-icons/gr";
-import {  RiNextjsFill,  RiTailwindCssFill } from "react-icons/ri";
-import { SiJavascript, SiMongodb, SiSocketdotio, SiTypescript } from "react-icons/si";
+import { RiNextjsFill, RiTailwindCssFill } from "react-icons/ri";
+import {
+  SiJavascript,
+  SiMongodb,
+  SiSocketdotio,
+  SiTypescript,
+} from "react-icons/si";
+import * as handlers from "@/helpers/handlers";
+import { MiInfo } from "@/components/MiInfo/MiInfo";
+import Link from "next/link";
 
 const myAnimatedIcons = [
   {
     ubication: "top-2",
-    icono: (
-      <FaArrowAltCircleUp size={60} className="bg-blue-800 rounded-full" />
-    ),
+    icono: <FaArrowAltCircleUp size={60} className="bg-blue-600 rounded-2xl" />,
     label: "Más Sobre mi",
-    
+    modalAnimation: "modal-animation-up",
+    modalAnimationExit: "modal-animation-down-exit",
+    elemento: <MiInfo />,
+    handler: handlers.handlerUp,
   },
   {
     ubication: "bottom-2",
     icono: (
-      <FaArrowAltCircleDown size={60} className="bg-blue-800 rounded-full" />
+      <FaArrowAltCircleDown size={60} className="bg-blue-600 rounded-2xl" />
     ),
-    label: "Experiencias",
+    label: "Más Sobre mi",
+    modalAnimation: "modal-animation-down",
+    modalAnimationExit: "modal-animation-up-exit",
+
+    elemento: <MiInfo />,
+    handler: handlers.handlerDown,
   },
   {
     ubication: "right-2",
     icono: (
-      <FaArrowAltCircleRight size={60} className="bg-blue-800 rounded-full" />
+      <FaArrowAltCircleRight size={60} className="bg-blue-600 rounded-2xl" />
     ),
     label: "Proyectos",
+    modalAnimation: "modal-animation-left",
+    modalAnimationExit: "modal-animation-rigth-exit",
+
+    elemento: <Proyectos />,
+    handler: handlers.handlerRight,
   },
   {
     ubication: "left-2",
     icono: (
-      <FaArrowAltCircleLeft size={60} className="bg-blue-800 rounded-full" />
+      <FaArrowAltCircleLeft size={60} className="bg-blue-600 rounded-2xl" />
     ),
-    label: "Contactame",
+    label: "Proyectos",
+    modalAnimation: "modal-animation-rigth",
+    modalAnimationExit: "modal-animation-left-exit",
+
+    elemento: <Proyectos />,
+    handler: handlers.handlerLeft,
   },
 ];
 
 export default function Home() {
   return (
     <div className="App">
-      
       {myAnimatedIcons.map((AnimatedIcons) => (
         <AnimatedElement
           key={AnimatedIcons.label}
           ubication={AnimatedIcons.ubication}
           icono={AnimatedIcons.icono}
           label={AnimatedIcons.label}
+          modalAnimation={AnimatedIcons.modalAnimation}
+          modalAnimationExit={AnimatedIcons.modalAnimationExit}
+          elemento={AnimatedIcons.elemento}
+          handler={AnimatedIcons.handler}
         />
       ))}
+
       <section>
         <div className="mb-24">
           <div className="mx-auto px-24 max-w-6xl text-gray-500">
@@ -76,10 +107,10 @@ export default function Home() {
 
                       <section className="block   m-3">
                         <div className="pl-3">
-                          <h3 className="text-white font-bold text-2xl mb-2">
+                          <h3 className="text-white font-bold text-3xl mb-2">
                             Nicolás Chomyn
                           </h3>
-                          <h3 className="bg-clip-text text-blue-600  text-base font-bold">
+                          <h3 className="bg-clip-text text-blue-300  text-lg font-bold">
                             Full Stack Developer
                           </h3>
                         </div>
@@ -87,42 +118,31 @@ export default function Home() {
                     </div>
 
                     <div className="flex w-max gap-1 pt-2 mt-4">
-                      <button className="flex gap-1 cursor-pointer text-white font-semibold bg-gradient-to-r from-gray-800 to-black px-3 py-1 rounded-full border border-gray-600 hover:scale-105 duration-200 hover:text-gray-500 hover:border-gray-800 hover:from-black hover:to-gray-900">
-                        <svg
-                          viewBox="0 0 24 24"
-                          height="24"
-                          width="24"
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path
-                            fill="#FFFFFF"
-                            d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"
-                          ></path>
-                        </svg>
-                        Github
-                      </button>
-                      <button className="flex gap-1 cursor-pointer text-white font-semibold bg-gradient-to-r from-gray-800 to-black px-3 py-1 rounded-full border border-gray-600 hover:scale-105 duration-200 hover:text-gray-500 hover:border-gray-800 hover:from-black hover:to-gray-900">
-                        <svg
-                          viewBox="0 0 24 24"
-                          height="24"
-                          width="24"
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path
-                            fill="#FFFFFF"
-                            d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"
-                          ></path>
-                        </svg>
-                        LinkedIn
-                      </button>
-                      
+                      <a 
+                      href="https://github.com/ChomynNicolas"
+                      target="_blank"
+                      >
+                        <button className="flex gap-1 cursor-pointer text-white font-semibold bg-gradient-to-r from-gray-800 to-black px-3 py-1 rounded-full border border-gray-600 hover:scale-105 duration-200 hover:text-gray-500 hover:border-gray-800 hover:from-black hover:to-gray-900">
+                          <FaGithub size={25} />
+                          Github
+                        </button>
+                      </a>
+                      <a 
+                      href="https://www.linkedin.com/in/chomyn-nicol%C3%A1s-b10b99319/"
+                      target="_blank"
+                      >
+                        <button className="flex gap-1 cursor-pointer text-white font-semibold bg-gradient-to-r from-blue-600 to-blue-800 px-3 py-1 rounded-full border border-blue-600 hover:scale-105 duration-200 hover:text-white hover:border-blue-800 hover:from-blue-600 hover:to-blue-800">
+                          <FaLinkedin size={25} />
+                          LinkedIn
+                        </button>
+                      </a>
                     </div>
                   </div>
-                  <div className="flex-1 items-center px-5 py-3  bg-white rounded-3xl shadow-lg">
-                    <h3 className="text-2xl text-black font-bold text-center">
+                  <div className="flex-1 items-center px-5 pb-5  bg-white rounded-3xl shadow-lg round">
+                    <h3 className="text-2xl text-black font-bold text-center mb-2">
                       Sobre mi
                     </h3>
-                    <p className="text-base text-gray-600 ">
+                    <p className="text-lg text-gray-600 justify-start ">
                       Soy estudiante de Ingeniería en Informática y
                       desarrollador web Full Stack especializado en el stack
                       MERN. Me apasiona crear aplicaciones web eficientes y
@@ -134,34 +154,32 @@ export default function Home() {
                       avance tecnológico y el deporte.
                     </p>
                   </div>
-                  <div className="flex-1 items-center px-5 py-3  bg-transparent rounded-3xl shadow-lg">
+                  <div className="flex-1 items-center px-5 py-5  bg-transparent rounded-3xl shadow-lg">
                     <h3 className="text-2xl text-white font-bold text-center mb-6">
                       Tecnologias
                     </h3>
                     <div className="flex flex-col gap-4">
-                      <div className="flex gap-2">
-                        <SiJavascript size={50} color="yellow"/>
+                      <div className="flex gap-5">
+                        <SiJavascript size={50} color="yellow" />
                         <SiTypescript size={50} color="blue" />
                         <FaReact size={50} color="blue" />
-                        <FaHtml5 size={50} color="#e34c26"/>
+                        <FaHtml5 size={50} color="#e34c26" />
                         <FaCss3Alt size={50} color="blue" />
-                        <RiTailwindCssFill size={50} color="cyan"/>
+                        <RiTailwindCssFill size={50} color="cyan" />
                       </div>
-                      <div className="flex gap-2">
-                      <FaNodeJs size={50} color="green"/>
-                      <SiMongodb size={50} color="green" />
-                      <GrMysql size={50} color="#49a4f5"/>
-                      <SiSocketdotio size={50} color="white"/>
-                      <RiNextjsFill size={50} color="black" className="bg-white rounded-full"/>
-                      <FaGitAlt size={50} color="#ff5e37" />
-
+                      <div className="flex gap-5">
+                        <FaNodeJs size={50} color="green" />
+                        <SiMongodb size={50} color="green" />
+                        <GrMysql size={50} color="#49a4f5" />
+                        <SiSocketdotio size={50} color="white" />
+                        <RiNextjsFill
+                          size={50}
+                          color="black"
+                          className="bg-white rounded-full"
+                        />
+                        <FaGitAlt size={50} color="#ff5e37" />
                       </div>
-                      <div className="flex">
-
-                      </div>
-
-
-
+                      <div className="flex"></div>
                     </div>
                   </div>
                 </div>

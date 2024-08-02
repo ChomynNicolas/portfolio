@@ -10,6 +10,116 @@
   }
 }
 
-.modal-animation {
-  animation: slideDown 0.3s ease-out forwards;
+@keyframes slideDownExit {
+  from {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  to {
+    transform: translateY(100%);
+    opacity: 0;
+  }
 }
+
+@keyframes slideUp {
+  from {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideUpExit {
+  from {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  to {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+}
+
+@keyframes slideInFromLeft {
+  from {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideInFromLeftExit {
+  from {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  to {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+}
+
+@keyframes slideInFromRight {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideInFromRightExit {
+  from {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  to {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+}
+
+.modal-animation-up {
+  animation: slideDown 1s ease-out forwards;
+}
+
+.modal-animation-down {
+  animation: slideUp 1s ease-out forwards;
+}
+
+.modal-animation-left {
+  animation: slideInFromRight 1s ease-out forwards;
+}
+
+.modal-animation-rigth {
+  animation: slideInFromLeft 1s ease-out forwards;
+}
+
+.modal-animation-up-exit {
+  animation: slideDownExit 0.5s ease-in forwards;
+}
+
+.modal-animation-down-exit {
+  animation: slideUpExit 0.5s ease-in forwards;
+}
+
+.modal-animation-left-exit {
+  animation: slideInFromRightExit 0.5s ease-in forwards;
+}
+
+.modal-animation-rigth-exit {
+  animation: slideInFromLeftExit 0.5s ease-in forwards;
+}
+
+
+
+
+
