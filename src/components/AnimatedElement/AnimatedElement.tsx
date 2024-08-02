@@ -32,7 +32,7 @@ export const AnimatedElement = ({
     return () => {
       window.removeEventListener("keydown", handleKeyDown);
     };
-  }, []);
+  }, [handler]);
 
   return (
     <div

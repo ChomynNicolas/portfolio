@@ -33,7 +33,7 @@ export const ModalProyecto = ({
       }, 500); 
       return () => clearTimeout(timer);
     }
-  }, [showModal]);
+  }, [showModal,isVisible,isExiting]);
 
   return (
     <>
