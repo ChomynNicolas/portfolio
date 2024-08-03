@@ -79,7 +79,7 @@ const myAnimatedIcons = [
 
 export default function Home() {
   return (
-    <div className="App">
+    <div className="App ">
       {myAnimatedIcons.map((AnimatedIcons) => (
         <AnimatedElement
           key={AnimatedIcons.label}
@@ -93,9 +93,9 @@ export default function Home() {
         />
       ))}
 
-      <section>
+      <section className="overflow-y-auto max-h-screen">
         <div className="mb-24 mt-20 ">
-          <div className="mx-auto md:px-24 max-w-6xl text-gray-500">
+          <div className="mx-auto md:px-24 max-w-6xl  text-gray-500">
             <div className="">
               <div className=" z-10 grid gap-3 grid-cols-9">
                 <div className="col-span-full  lg:col-span-9 overflow-hidden flex flex-col items-center justify-center gap-2  p-8 rounded-xl ">
