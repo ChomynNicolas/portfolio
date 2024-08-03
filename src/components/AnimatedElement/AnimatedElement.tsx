@@ -41,7 +41,7 @@ export const AnimatedElement = ({
       <div
       onClick={()=> setShowModal(previus => !previus)}
       className="iconoAnimado cursor-pointer">{icono}</div>
-      <p className="text-gray-50 ">{label}</p>
+      <p className="text-gray-50 text-base md:text-lg ">{label}</p>
       <ModalProyecto
         showModal={showModal}
         setShowModal={setShowModal}

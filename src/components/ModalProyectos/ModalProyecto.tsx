@@ -61,7 +61,7 @@ export const ModalProyecto = ({
                   >
                     <MdCancel size={50}/>
                   </button>
-                <div className="bg-gray-700 flex overflow-hidden  ">
+                <div className="bg-gray-700 flex overflow-y-auto h-5/6  ">
                 
                   {elemento}
                 </div>
