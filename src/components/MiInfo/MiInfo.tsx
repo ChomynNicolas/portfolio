@@ -4,10 +4,13 @@ import { SiReact } from "react-icons/si";
 export const MiInfo = () => {
   return (
     <div className="  max-w-[800px] rounded-md  p-5 ">
+      <div className="md:flex  items-center gap-2 mb-2">
+
       <figure className="w-12 h-12 p-2 bg-blue-800 rounded-md">
         <SiReact size={34} />
       </figure>
       <h4 className="py-2 text-white text-center font-bold text-5xl">Jorge Nicolás Chomyn Smuz</h4>
+      </div>
       <p className="text-xl leading-7 text-center text-white font-semibold space-y-4">
         Desarrollador Web Full Stack
       </p>

@@ -1,5 +1,5 @@
 "use client";
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import "./ModalProyecto.css";
 import { MdCancel } from "react-icons/md";
 
@@ -20,6 +20,7 @@ export const ModalProyecto = ({
 }: Props) => {
   const [isVisible, setIsVisible] = useState(showModal);
   const [isExiting, setIsExiting] = useState(false);
+  const modalRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     if (showModal) {
@@ -34,6 +35,21 @@ export const ModalProyecto = ({
       return () => clearTimeout(timer);
     }
   }, [showModal,isVisible,isExiting]);
+
+
+  const handleClickOutside = (event: MouseEvent) => {
+    if (modalRef.current && !modalRef.current.contains(event.target as Node)) {
+      setShowModal(false);
+    }
+  };
+
+  useEffect(() => {
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
+
 
   return (
     <>
@@ -51,6 +67,7 @@ export const ModalProyecto = ({
           <div className=" fixed inset-0 z-10 w-screen overflow-y-auto">
             <div className="flex min-h-full items-end justify-center p-4 text-center sm:items-center sm:p-0 overflow-hidden">
               <div
+                ref={modalRef}
                 className={` transform overflow-hidden rounded-lg bg-white text-left shadow-xl transition-all ease-out duration-300 ${
                   isExiting ? modalAnimationExit : modalAnimation
                 } static`}

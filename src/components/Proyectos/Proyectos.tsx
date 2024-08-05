@@ -2,7 +2,7 @@ import React from "react";
 import { ContenedorProyecto } from "../ContenedorProyecto/ContenedorProyecto";
 
 import imagen1 from "../../../public/mi-pagina.jpg";
-import imagen2 from "../../../public/pagina-web.png";
+import imagen2 from "../../../public/pictureGame.png";
 import { SiCanvas, SiCssmodules, SiLeaflet, SiMongodb, SiMongoose, SiSocketdotio } from "react-icons/si";
 import { FaReact } from "react-icons/fa";
 
@@ -25,24 +25,29 @@ const myProyects = [
     ],
     tecnologias: [
       {
-        title: "Base de datos: MongoDB",
-        icon: <SiMongodb  size={45} />,
+        title: "Base de datos:",
+        desc: "Mongodb",
+        icon: <SiMongodb color="green"  size={45} />,
       },
       {
-        title: "ODM: Mongoose",
-        icon: <SiMongoose size={35} />,
+        title: "ODM:",
+        desc: "Mongoose",
+        icon: <SiMongoose color="#bd0003" size={35} />,
       },
       {
-        title: "Geolocalización y mapas: Leaflet",
-        icon: <SiLeaflet  size={35} />,
+        title: "Geolocalización y mapas:",
+        desc: "Leaflet",
+        icon: <SiLeaflet color="green"  size={35} />,
       },
       {
-        title: "Frontend: React.js",
-        icon: <FaReact   size={35} />,
+        title: "Frontend:",
+        desc: "React.js",
+        icon: <FaReact  color="#58b5ff"  size={35} />,
       },
       {
-        title: "Estilos: CSS Modules",
-        icon: <SiCssmodules    size={35} />,
+        title: "Estilos:",
+        desc: "CSS Modules",
+        icon: <SiCssmodules  size={35} />,
       },
     ],
   },
@@ -65,16 +70,19 @@ const myProyects = [
     
     tecnologias: [
       {
-        title: "WebSockets: Socket.io",
-        icon: <SiSocketdotio size={35} />,
+        title: "WebSockets:",
+        desc: "Socket.io",
+        icon: <SiSocketdotio color="black" size={35} />,
       },
       {
-        title: "Canvas: Integración con React.js",
-        icon: <SiCanvas  size={35} />,
+        title: "Canvas:",
+        desc: "Integración con React.js",
+        icon: <SiCanvas color="red"  size={35} />,
       },
       {
-        title: "Frontend: React.js",
-        icon: <FaReact   size={35} />,
+        title: "Frontend:",
+        desc: "React.js",
+        icon: <FaReact  color="#58b5ff"  size={35} />,
       },
     ],
   },
@@ -83,7 +91,7 @@ const myProyects = [
 export const Proyectos = () => (
   <section className="text-gray-600 body-font overflow-hidden">
     <div className="container px-5 py-10 mx-auto">
-      <div className="-my-8 divide-y-2 divide-gray-100">
+      <div className="-my-8 divide-y-2 ">
         {myProyects.map((proyecto) => (
           <ContenedorProyecto key={proyecto.title} {...proyecto} />
         ))}

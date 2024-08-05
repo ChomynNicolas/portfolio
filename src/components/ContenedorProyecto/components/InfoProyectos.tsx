@@ -4,6 +4,7 @@ import { FaHandPointLeft } from "react-icons/fa";
 
 interface Tecnologias {
   title: string;
+  desc:string;
   icon: React.ReactNode;
 }
 
@@ -32,18 +33,18 @@ export const InfoProyectos = ({ content, link, title, tecnologias }: Props) => {
       <h2 className="text-xl lg:text-2xl font-medium text-center text-gray-50 title-font  md:my-2">
         Tecnologias usadas
       </h2>
-      <div className="leading-relaxed text-gray-100 text-sm md:text-base lg:text-lg  mx-auto flex flex-wrap  xl:flex-nowrap">
+      <div className="leading-relaxed text-gray-100 text-sm md:text-base lg:text-lg  mx-auto flex flex-wrap  items-center lg:justify-center">
         {tecnologias.map((tec) => (
           <div 
           key={tec.title}
           className="flex items-center gap-2 pb-2 pr-2">
             {tec.icon}
-            <p>{tec.title}</p>
+            <p>{tec.title} {tec.desc}</p>
           </div>
         ))}
       </div>
 
-      <div className="flex flex-wrap gap-5">
+      <div className="flex flex-wrap text-sm md:text-lg gap-1 md:gap-5 items-center sm:justify-around  ">
         {link.map((link) => (
           <a
             key={link.title}
