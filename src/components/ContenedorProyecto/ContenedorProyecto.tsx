@@ -37,7 +37,7 @@ export const ContenedorProyecto = ({
       <div className="w-full lg:max-w-lg lg:mb-0 lg:mr-4 md:justify-center md:pb-5 md:mb-6 flex-shrink-0 flex flex-col">
         <Carousel>
           {images.map((img, i) => (
-            <Image src={img} width={700} height={400} alt={`imagen ${i}`} />
+            <Image key={i} src={img} width={700} height={400} alt={`imagen ${i}`} />
           ))}
         </Carousel>
       </div>
