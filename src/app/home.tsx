@@ -111,7 +111,7 @@ export default function Home() {
   useEffect(() => {
     setTimeout(() => {
       setAnimation(true)
-    }, 4000);
+    }, 8000);
   
     
   }, [])
