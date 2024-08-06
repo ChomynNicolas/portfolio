@@ -1,4 +1,3 @@
-"use client";
 import { useEffect, useState } from "react";
 import { ModalProyecto } from "../ModalProyectos/ModalProyecto";
 import "./AnimatedElement.css";
@@ -11,6 +10,7 @@ interface Props {
   modalAnimation: string;
   modalAnimationExit: string;
   elemento: React.ReactNode;
+  animation: boolean;
   handler: (setShowModal: Function, e: KeyboardEvent) => void;
 }
 
@@ -22,12 +22,12 @@ export const AnimatedElement = ({
   modalAnimationExit,
   elemento,
   handler,
+  animation,
 }: Props) => {
   const [showModal, setShowModal] = useState(false);
-  
 
   useEffect(() => {
-    const handleKeyDown = (e: KeyboardEvent) => handler(setShowModal,e);
+    const handleKeyDown = (e: KeyboardEvent) => handler(setShowModal, e);
     window.addEventListener("keydown", handleKeyDown);
 
     return () => {
@@ -35,32 +35,27 @@ export const AnimatedElement = ({
     };
   }, [handler]);
 
-  
-
   return (
-    
-    <div
-      className={`element ${ubication} flex flex-col hover:text-gray-100  `}
-    >
-      <div
-      onClick={()=> setShowModal(previus => !previus)}
-      className="iconoAnimado cursor-pointer">
-        <Image
-        src={icono}
-        width={50}
-        height={50}
-        alt='mi icono'
-        />
-        
+    <div>
+      <div className={`element ${ubication} flex flex-col hover:text-gray-100`}>
+        <div
+          onClick={() => setShowModal((prev) => !prev)}
+          className="iconoAnimado cursor-pointer"
+        >
+          <Image src={icono} width={50} height={50} alt="mi icono" />
+        </div>
+        <p className="text-gray-50 text-base md:text-lg">{label}</p>
       </div>
-      <p className="text-gray-50 text-base md:text-lg ">{label}</p>
-      <ModalProyecto
-        showModal={showModal}
-        setShowModal={setShowModal}
-        modalAnimation={modalAnimation}
-        elemento={elemento}
-        modalAnimationExit={modalAnimationExit}
-      />
+      {animation && (
+        <ModalProyecto
+          showModal={showModal}
+          setShowModal={setShowModal}
+          modalAnimation={modalAnimation}
+          elemento={elemento}
+          modalAnimationExit={modalAnimationExit}
+          animation={animation}
+        />
+      )}
     </div>
   );
 };

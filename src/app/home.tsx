@@ -33,10 +33,12 @@ import down from "../../public/abajo.png";
 
 import profile from "../../public/profile2.jpg";
 import Image from "next/image";
+import { useEffect, useState } from "react";
 
 const myAnimatedIcons = [
   {
-    ubication: "top-0 md:top-2",
+    ubication: "flecha-up-animation middle top-2",
+    ubication2: "inset-0 mb-44",
     icono: up,
     label: "Más Sobre mi",
     modalAnimation: "modal-animation-up",
@@ -45,9 +47,10 @@ const myAnimatedIcons = [
     handler: handlers.handlerUp,
   },
   {
-    ubication: "bottom-2",
+    ubication: "flecha-down-animation middle  bottom-2 ",
+    ubication2: "inset-0 ",
     icono: down,
-    label: "Más Sobre mi",
+    label: "Contactame",
     modalAnimation: "modal-animation-down",
     modalAnimationExit: "modal-animation-up-exit",
 
@@ -55,7 +58,8 @@ const myAnimatedIcons = [
     handler: handlers.handlerDown,
   },
   {
-    ubication: "right-0 md:right-2",
+    ubication: "flecha-right-animation middle2 right-0 md:right-2",
+    ubication2: "inset-0 ml-48",
     icono: left,
     label: "Proyectos",
     modalAnimation: "modal-animation-left",
@@ -65,7 +69,8 @@ const myAnimatedIcons = [
     handler: handlers.handlerRight,
   },
   {
-    ubication: "left-0 md:left-2",
+    ubication: "flecha-left-animation middle2 left-0 md:left-2",
+    ubication2: "inset-0 mr-48",
     icono: right,
     label: "Proyectos",
     modalAnimation: "modal-animation-rigth",
@@ -77,22 +82,76 @@ const myAnimatedIcons = [
 ];
 
 export default function Home() {
+  const [animation, setAnimation] = useState(false);
+
+  const handlerKeyDown = (e: KeyboardEvent) => {
+    if(e.key === "ArrowUp" || e.key === "ArrowDown" || e.key === "ArrowRight" || e.key === "ArrowLeft") return
+    setAnimation(true);
+  };
+
+  useEffect(() => {
+    document.addEventListener("keydown", handlerKeyDown);
+    return () => {
+      document.removeEventListener("keydown", handlerKeyDown);
+    };
+  }, []);
+
+  const handleClickOutside = ( ) =>{
+    setAnimation(true);
+  }
+
+  useEffect(() => {
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
+
+
+  useEffect(() => {
+    setTimeout(() => {
+      setAnimation(true)
+    }, 4000);
+  
+    
+  }, [])
+  
+
   return (
-    <div className="App ">
+    <div className={`App   `}>
+
+      {
+        !animation ? 
+        <div className="absolute text-3xl md:text-6xl font-mono text-bold text-white top-52 text-center">
+          Welcome to my PORTFOLIO
+
+        </div>: ""
+
+      }
       {myAnimatedIcons.map((AnimatedIcons) => (
         <AnimatedElement
-          key={AnimatedIcons.label}
-          ubication={AnimatedIcons.ubication}
+          key={AnimatedIcons.ubication}
+          ubication={
+            animation ? AnimatedIcons.ubication : AnimatedIcons.ubication2
+          }
           icono={AnimatedIcons.icono}
           label={AnimatedIcons.label}
           modalAnimation={AnimatedIcons.modalAnimation}
           modalAnimationExit={AnimatedIcons.modalAnimationExit}
           elemento={AnimatedIcons.elemento}
           handler={AnimatedIcons.handler}
+          animation={animation}
         />
       ))}
 
-      <section className="overflow-y-auto max-h-screen ">
+
+{
+        !animation ? 
+        <div className="absolute font-mono  text-white mt-44 text-center">
+          <p className="text-lg md:text-xl font-extralight py-10">Para navegar utilizar las flechas del teclado o  hacer click en los iconos.</p>
+          <p className="text-lg md:text-xl font-extrabold ">Presione una tecla </p>
+
+        </div>: <section className="overflow-y-auto max-h-screen bg-opacity-75 transition-opacity ease-out duration-300">
         <div className="mb-24 mt-20 ">
           <div className="mx-auto md:px-24 max-w-6xl  text-gray-500">
             <div className="">
@@ -193,6 +252,16 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      }
+
+  
+
+  
+
+      
+
+      
     </div>
   );
 }

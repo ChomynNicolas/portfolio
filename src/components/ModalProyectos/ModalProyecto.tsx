@@ -9,6 +9,7 @@ interface Props {
   modalAnimation: string;
   modalAnimationExit: string;
   elemento: React.ReactNode;
+  animation: boolean;
 }
 
 export const ModalProyecto = ({
@@ -17,16 +18,17 @@ export const ModalProyecto = ({
   modalAnimation,
   elemento,
   modalAnimationExit,
+  animation
 }: Props) => {
   const [isVisible, setIsVisible] = useState(showModal);
   const [isExiting, setIsExiting] = useState(false);
   const modalRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    if (showModal) {
+    if (showModal && animation) {
       setIsVisible(true);
       setIsExiting(false);
-    } else if (isVisible) {
+    } else if (isVisible &&animation) {
       setIsExiting(true);
       const timer = setTimeout(() => {
         setIsVisible(false);
@@ -34,7 +36,7 @@ export const ModalProyecto = ({
       }, 500); 
       return () => clearTimeout(timer);
     }
-  }, [showModal,isVisible,isExiting]);
+  }, [showModal,isVisible,isExiting,animation]);
 
 
   const handleClickOutside = (event: MouseEvent) => {
@@ -49,6 +51,7 @@ export const ModalProyecto = ({
       document.removeEventListener("mousedown", handleClickOutside);
     };
   }, []);
+
 
 
   return (
