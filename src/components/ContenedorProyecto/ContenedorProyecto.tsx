@@ -33,7 +33,7 @@ export const ContenedorProyecto = ({
   tecnologias,
 }: Props) => {
   return (
-    <div className="py-4 flex flex-wrap lg:flex-nowrap">
+    <div className="py-4 pt-10 flex flex-wrap lg:flex-nowrap">
       <div className="w-full lg:max-w-lg lg:mb-0 lg:mr-4 md:justify-center md:pb-5 md:mb-6 flex-shrink-0 flex flex-col">
         <Carousel>
           {images.map((img, i) => (
