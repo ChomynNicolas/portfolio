@@ -30,7 +30,7 @@ export const InfoProyectos = ({ content, link, title, tecnologias }: Props) => {
         {content}
       </p>
 
-      <h2 className="text-xl lg:text-2xl font-medium text-center text-gray-50 title-font  md:my-2">
+      <h2 className="text-xl lg:text-2xl font-semibold text-center text-gray-950 title-font  md:my-2">
         Tecnologias usadas
       </h2>
       <div className="leading-relaxed text-gray-100 text-sm md:text-base lg:text-lg  mx-auto flex flex-wrap  items-center lg:justify-center">
@@ -50,7 +50,7 @@ export const InfoProyectos = ({ content, link, title, tecnologias }: Props) => {
             key={link.title}
             href={link.link}
             target="_blank"
-            className="text-blue-400 inline-flex items-center mt-4"
+            className="text-lime-500 hover:text-lime-300 inline-flex items-center mt-4"
           >
             Ir a {link.title}
             <FaHandPointLeft size={30} className="pl-2" />

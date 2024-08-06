@@ -35,7 +35,10 @@ export const AnimatedElement = ({
     };
   }, [handler]);
 
+  
+
   return (
+    
     <div
       className={`element ${ubication} flex flex-col hover:text-gray-100  `}
     >

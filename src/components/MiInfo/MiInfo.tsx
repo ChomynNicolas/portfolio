@@ -30,11 +30,11 @@ export const MiInfo = () => {
         <h3 className="text-center text-3xl font-semibold mb-4">Conocimientos</h3>
         <p className="text-start text-lg text-slate-300">
       
-        <span className="text-blue-500 font-bold text-xl">Frontend:</span> JavaScript, TypeScript, HTML5, CSS3, React.js, Next.js, TailwindCSS, AJAX
+        <span className="text-blue-800 font-bold text-xl">Frontend:</span> JavaScript, TypeScript, HTML5, CSS3, React.js, Next.js, TailwindCSS, AJAX
         <br/>
-        <span className="text-gray-200 text-xl">Backend:</span> Node.js, Express.js, MongoDB, MySQL, PostgreSQL, socket.io, RESTful APIs.
+        <span className="text-gray-200 font-bold text-xl">Backend:</span> Node.js, Express.js, MongoDB, MySQL, PostgreSQL, socket.io, RESTful APIs.
         <br/>
-        <span className="text-orange-500 text-xl">Herramientas:</span>  Git, GitHub, Visual Studio Code, Postman, Docker, JSON, Métodos Ágiles.
+        <span className="text-orange-400 font-bold text-xl">Herramientas:</span>  Git, Visual Studio Code, Postman, Docker, JSON, Métodos Ágiles.
         
         
 

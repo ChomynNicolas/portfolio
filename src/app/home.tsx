@@ -26,16 +26,13 @@ import {
 import * as handlers from "@/helpers/handlers";
 import { MiInfo } from "@/components/MiInfo/MiInfo";
 
-import left from '../../public/izquierda.png'
-import right from '../../public/derecha.png'
-import up from '../../public/arriba.png'
-import down from '../../public/abajo.png'
+import left from "../../public/izquierda.png";
+import right from "../../public/derecha.png";
+import up from "../../public/arriba.png";
+import down from "../../public/abajo.png";
 
-import profile from '../../public/profile2.jpg'
+import profile from "../../public/profile2.jpg";
 import Image from "next/image";
-
-
-
 
 const myAnimatedIcons = [
   {
@@ -79,7 +76,6 @@ const myAnimatedIcons = [
   },
 ];
 
-
 export default function Home() {
   return (
     <div className="App ">
@@ -95,9 +91,8 @@ export default function Home() {
           handler={AnimatedIcons.handler}
         />
       ))}
-      
 
-      <section className="overflow-y-auto max-h-screen">
+      <section className="overflow-y-auto max-h-screen ">
         <div className="mb-24 mt-20 ">
           <div className="mx-auto md:px-24 max-w-6xl  text-gray-500">
             <div className="">
@@ -107,11 +102,11 @@ export default function Home() {
                     <div className="flex">
                       <section className="flex justify-center items-center w-24 h-24 rounded-full shadow-md bg-gradient-to-r from-[#F9C97C] to-[#A2E9C1] hover:from-[#C9A9E9] hover:to-[#7EE7FC] hover:cursor-pointer hover:scale-110 duration-300">
                         <Image
-                        src={profile}
-                        width={400}
-                        height={400}
-                        className="rounded-full"
-                        alt="mi perfil"
+                          src={profile}
+                          width={400}
+                          height={400}
+                          className="rounded-full"
+                          alt="mi perfil"
                         />
                       </section>
 
@@ -128,18 +123,18 @@ export default function Home() {
                     </div>
 
                     <div className="flex w-max gap-1 pt-2 mt-4">
-                      <a 
-                      href="https://github.com/ChomynNicolas"
-                      target="_blank"
+                      <a
+                        href="https://github.com/ChomynNicolas"
+                        target="_blank"
                       >
                         <button className="flex gap-1 cursor-pointer text-white font-semibold bg-gradient-to-r from-gray-800 to-black px-3 py-1 rounded-full border border-gray-600 hover:scale-105 duration-200 hover:text-gray-500 hover:border-gray-800 hover:from-black hover:to-gray-900">
                           <FaGithub size={25} />
                           Github
                         </button>
                       </a>
-                      <a 
-                      href="https://www.linkedin.com/in/nicolás-chomyn"
-                      target="_blank"
+                      <a
+                        href="https://www.linkedin.com/in/nicolás-chomyn"
+                        target="_blank"
                       >
                         <button className="flex gap-1 cursor-pointer text-white font-semibold bg-gradient-to-r from-blue-600 to-blue-800 px-3 py-1 rounded-full border border-blue-600 hover:scale-105 duration-200 hover:text-white hover:border-blue-800 hover:from-blue-600 hover:to-blue-800">
                           <FaLinkedin size={25} />
@@ -148,11 +143,11 @@ export default function Home() {
                       </a>
                     </div>
                   </div>
-                  <div className="flex-1 items-center w-60 px-5 sm:w-96  md:w-full  md:px-5 pb-5  bg-white rounded-3xl shadow-lg round">
+                  <div className="flex-1 items-center w-60 px-5 sm:w-96  md:w-full  md:px-5 pb-5  bg-white opacity-70 rounded-3xl shadow-lg round">
                     <h3 className="text-2xl text-black font-bold text-center mb-2">
                       Sobre mi
                     </h3>
-                    <p className="text-xs sm:text-sm md:text-lg text-gray-600 justify-start ">
+                    <p className="text-xs sm:text-sm md:text-lg text-black justify-start ">
                       Soy estudiante de Ingeniería en Informática y
                       desarrollador web Full Stack especializado en el stack
                       MERN. Me apasiona crear aplicaciones web eficientes y
