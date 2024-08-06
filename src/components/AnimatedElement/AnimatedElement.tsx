@@ -44,7 +44,7 @@ export const AnimatedElement = ({
         >
           <Image src={icono} width={50} height={50} alt="mi icono" />
         </div>
-        <p className="text-gray-50 text-base md:text-lg">{label}</p>
+        <p className="text-gray-50 text-xs md:text-lg">{label}</p>
       </div>
       {animation && (
         <ModalProyecto

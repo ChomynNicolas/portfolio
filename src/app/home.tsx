@@ -122,7 +122,7 @@ export default function Home() {
 
       {
         !animation ? 
-        <div className="absolute text-3xl md:text-6xl font-mono text-bold text-white top-52 text-center">
+        <div className="absolute text-3xl md:text-6xl font-mono text-bold text-white  top-44  md:top-52 text-center">
           Welcome to my PORTFOLIO
 
         </div>: ""
@@ -147,7 +147,7 @@ export default function Home() {
 
 {
         !animation ? 
-        <div className="absolute font-mono  text-white mt-44 text-center">
+        <div className="absolute font-mono  text-white mt-64  md:mt-44 text-center">
           <p className="text-lg md:text-xl font-extralight py-10">Para navegar utilizar las flechas del teclado o  hacer click en los iconos.</p>
           <p className="text-lg md:text-xl font-extrabold ">Presione una tecla </p>
 
