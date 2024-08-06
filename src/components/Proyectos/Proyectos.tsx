@@ -1,19 +1,31 @@
 import React from "react";
 import { ContenedorProyecto } from "../ContenedorProyecto/ContenedorProyecto";
 
-import imagen1 from "../../../public/mi-pagina.jpg";
-import imagen2 from "../../../public/pictureGame.png";
+import imagen1 from "../../../public/mapmanager1.png";
+import imagen2 from "../../../public/mapmanager2.png";
+import imagen3 from "../../../public/mapmanager3.png";
+import imagen4 from "../../../public/mapmanager4.png";
+
+
+import imagen5 from "../../../public/pictureGame.png";
+import imagen6 from "../../../public/pictureGame2.png";
+import imagen7 from "../../../public/pictureGame3.png";
+
 import { SiCanvas, SiCssmodules, SiLeaflet, SiMongodb, SiMongoose, SiSocketdotio } from "react-icons/si";
 import { FaReact } from "react-icons/fa";
 
 
 const myProyects = [
   {
-    imagen: imagen1,
+    images: [imagen1,imagen2,imagen3,imagen4],
     title: "Map Manager",
     content:
       "MapManager es una aplicación que permite a los usuarios crear y seguir eventos con ubicaciones en un mapa y un calendario. Utilizando MongoDB y Mongoose, se desarrolló la base de datos. La funcionalidad de ubicación del usuario se implementó con Leaflet, permitiendo guardar la ubicación junto con los datos del formulario en la base de datos. La interfaz de usuario fue creada con React.js y CSS Modules, asegurando una experiencia intuitiva y visualmente atractiva para los usuarios.",
     link: [
+      {
+        title: 'Pagina web',
+        link: "https://master.durqva7i188r1.amplifyapp.com/",
+      },
       {
         title: 'Repositorio del FrontEnd',
         link: "https://github.com/AlejandroDojo/MapManager",
@@ -52,7 +64,7 @@ const myProyects = [
     ],
   },
   {
-    imagen: imagen2,
+    images: [imagen5,imagen6,imagen7],
     title: "PictureGame",
     content:
       "PictureGame es un juego de dibujo multijugador que permite a los usuarios dibujar y adivinar en tiempo real mientras interactúan a través de un chat en vivo. La integración de Socket.io con el elemento canvas en React.js permite compartir los dibujos instantáneamente entre los jugadores. Un chat en tiempo real, también implementado con Socket.io, permite a los usuarios escribir y enviar respuestas para resolver el juego.",

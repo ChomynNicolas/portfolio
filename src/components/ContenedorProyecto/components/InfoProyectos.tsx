@@ -39,7 +39,7 @@ export const InfoProyectos = ({ content, link, title, tecnologias }: Props) => {
           key={tec.title}
           className="flex items-center gap-2 pb-2 pr-2">
             {tec.icon}
-            <p>{tec.title} {tec.desc}</p>
+            <p className="font-light"><span className="font-extrabold">{tec.title} </span>{tec.desc}</p>
           </div>
         ))}
       </div>

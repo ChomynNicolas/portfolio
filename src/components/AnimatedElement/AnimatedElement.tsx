@@ -2,10 +2,11 @@
 import { useEffect, useState } from "react";
 import { ModalProyecto } from "../ModalProyectos/ModalProyecto";
 import "./AnimatedElement.css";
+import Image, { StaticImageData } from "next/image";
 
 interface Props {
   ubication: string;
-  icono: React.ReactNode;
+  icono: StaticImageData;
   label: string;
   modalAnimation: string;
   modalAnimationExit: string;
@@ -40,7 +41,15 @@ export const AnimatedElement = ({
     >
       <div
       onClick={()=> setShowModal(previus => !previus)}
-      className="iconoAnimado cursor-pointer">{icono}</div>
+      className="iconoAnimado cursor-pointer">
+        <Image
+        src={icono}
+        width={50}
+        height={50}
+        alt='mi icono'
+        />
+        
+      </div>
       <p className="text-gray-50 text-base md:text-lg ">{label}</p>
       <ModalProyecto
         showModal={showModal}
