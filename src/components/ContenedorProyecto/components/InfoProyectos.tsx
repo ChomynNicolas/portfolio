@@ -22,7 +22,7 @@ interface Props {
 
 export const InfoProyectos = ({ content, link, title, tecnologias }: Props) => {
   return (
-    <div className="  md:flex-grow ">
+    <div className="  md:flex-grow p-5">
       <h2 className="text-2xl lg:text-5xl font-medium text-center text-gray-50 title-font  md:mb-5">
         {title}
       </h2>

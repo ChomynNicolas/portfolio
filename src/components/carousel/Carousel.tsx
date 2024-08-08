@@ -17,8 +17,8 @@ export const Carousel = ({ children }: Props) => {
   const next = () => setCurr(curr => curr === childrenArray.length - 1 ? 0 : curr + 1);
 
   return (
-    <div className='overflow-hidden relative'>
-      <div className='flex transition-transform ease-out duration-500'
+    <div className='overflow-hidden relative  w-full h-full lg:max-h-[400px] '>
+      <div className='flex transition-transform ease-out duration-500 w-full h-full'
         style={{ transform: `translateX(-${curr * 100}%)` }}
       >
         {childrenArray}

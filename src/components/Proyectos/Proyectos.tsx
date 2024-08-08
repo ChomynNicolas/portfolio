@@ -98,12 +98,13 @@ const myProyects = [
       },
     ],
   },
+  
 ];
 
 export const Proyectos = () => (
   <section className="text-gray-600 body-font overflow-hidden">
-    <div className="container px-5 py-10 mx-auto">
-      <div className="-my-8 divide-y-2 ">
+    <div className="container mt-8 md:mt-0 py-10 mx-auto">
+      <div className="-my-8 divide-y-2 flex flex-col ">
         {myProyects.map((proyecto) => (
           <ContenedorProyecto key={proyecto.title} {...proyecto} />
         ))}

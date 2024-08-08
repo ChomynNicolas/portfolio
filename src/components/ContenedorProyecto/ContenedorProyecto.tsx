@@ -33,20 +33,28 @@ export const ContenedorProyecto = ({
   tecnologias,
 }: Props) => {
   return (
-    <div className="py-4 pt-10 flex flex-wrap lg:flex-nowrap">
-      <div className="w-full lg:max-w-lg lg:mb-0 lg:mr-4 md:justify-center md:pb-5 md:mb-6 flex-shrink-0 flex flex-col">
+    <div className="grid lg:grid-cols-12 md:gap-4">
+      <div className=" lg:col-span-5 xl:col-span-4 flex items-center p-2 lg:p-5  ">
         <Carousel>
           {images.map((img, i) => (
-            <Image key={i} src={img} width={700} height={400} alt={`imagen ${i}`} />
+            <Image
+              key={i}
+              src={img}
+              width={1000}
+              height={1000}
+              alt={`imagen ${i}`}
+            />
           ))}
         </Carousel>
       </div>
-      <InfoProyectos
-        content={content}
-        title={title}
-        link={link}
-        tecnologias={tecnologias}
-      />
+      <div className="lg:col-span-7 xl:col-span-8">
+        <InfoProyectos
+          content={content}
+          title={title}
+          link={link}
+          tecnologias={tecnologias}
+        />
+      </div>
     </div>
   );
 };

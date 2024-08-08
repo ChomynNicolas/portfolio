@@ -35,12 +35,14 @@ import profile from "../../public/profile2.jpg";
 import Image from "next/image";
 import { useEffect, useState } from "react";
 
+import { CSSTransition } from "react-transition-group";
+
 const myAnimatedIcons = [
   {
     ubication: "flecha-up-animation middle top-2",
     ubication2: "inset-0 mb-44",
     icono: up,
-    label: "Más Sobre mi",
+    label: "Sobre mi",
     modalAnimation: "modal-animation-up",
     modalAnimationExit: "modal-animation-down-exit",
     elemento: <MiInfo />,
@@ -83,9 +85,17 @@ const myAnimatedIcons = [
 
 export default function Home() {
   const [animation, setAnimation] = useState(false);
+  const [animateOutDone, setAnimateOutDone] = useState(false);
+  const [animateOutDone2, setAnimateOutDone2] = useState(false);
 
   const handlerKeyDown = (e: KeyboardEvent) => {
-    if(e.key === "ArrowUp" || e.key === "ArrowDown" || e.key === "ArrowRight" || e.key === "ArrowLeft") return
+    if (
+      e.key === "ArrowUp" ||
+      e.key === "ArrowDown" ||
+      e.key === "ArrowRight" ||
+      e.key === "ArrowLeft"
+    )
+      return;
     setAnimation(true);
   };
 
@@ -96,9 +106,9 @@ export default function Home() {
     };
   }, []);
 
-  const handleClickOutside = ( ) =>{
+  const handleClickOutside = () => {
     setAnimation(true);
-  }
+  };
 
   useEffect(() => {
     document.addEventListener("mousedown", handleClickOutside);
@@ -107,27 +117,38 @@ export default function Home() {
     };
   }, []);
 
-
   useEffect(() => {
     setTimeout(() => {
-      setAnimation(true)
+      setAnimation(true);
     }, 8000);
-  
-    
-  }, [])
-  
+  }, []);
+
+  useEffect(() => {
+    if (animation) {
+      setTimeout(() => {
+        setAnimateOutDone(true);
+      }, 2500); 
+    }
+  }, [animation]);
+
+  useEffect(() => {
+    if (animation) {
+      setTimeout(() => {
+        setAnimateOutDone2(true);
+      }, 2000); 
+    }
+  }, [animation]);
 
   return (
-    <div className={`App   `}>
+    <div className={`App  `}>
+      <div
+        className={`absolute text-3xl md:text-6xl font-mono text-bold text-white top-44 md:top-52 text-center ${
+          animation ? "animate-out" : ""
+        } ${animateOutDone ? "animate-out-done" : ""}`}
+      >
+        Welcome to my PORTFOLIO
+      </div>
 
-      {
-        !animation ? 
-        <div className="absolute text-3xl md:text-6xl font-mono text-bold text-white  top-44  md:top-52 text-center">
-          Welcome to my PORTFOLIO
-
-        </div>: ""
-
-      }
       {myAnimatedIcons.map((AnimatedIcons) => (
         <AnimatedElement
           key={AnimatedIcons.ubication}
@@ -144,14 +165,21 @@ export default function Home() {
         />
       ))}
 
+      <div className={`absolute font-mono  text-white mt-64  md:mt-44 text-center ${
+          animation ? "animate-out" : ""
+        } ${animateOutDone ? "animate-out-done" : ""}`}>
+        <p className="text-lg md:text-xl font-extralight py-10">
+          Para navegar utilizar las flechas del teclado o hacer click en los
+          iconos.
+        </p>
+        <p className="text-lg md:text-xl font-extrabold ">
+          Presione una tecla{" "}
+        </p>
+      </div>
 
-{
-        !animation ? 
-        <div className="absolute font-mono  text-white mt-64  md:mt-44 text-center">
-          <p className="text-lg md:text-xl font-extralight py-10">Para navegar utilizar las flechas del teclado o  hacer click en los iconos.</p>
-          <p className="text-lg md:text-xl font-extrabold ">Presione una tecla </p>
-
-        </div>: <section className="overflow-y-auto max-h-screen bg-opacity-75 transition-opacity ease-out duration-300">
+      <section className={`overflow-y-auto max-h-screen bg-opacity-75 transition-opacity ease-out duration-300 ${
+          animation ? "animate-in" : ""
+        } ${animateOutDone2 ? "animate-in-done" : ""} ${animation ? "": "hidden"}  `}>
         <div className="mb-24 mt-20 ">
           <div className="mx-auto md:px-24 max-w-6xl  text-gray-500">
             <div className="">
@@ -252,16 +280,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-
-      }
-
-  
-
-  
-
-      
-
-      
     </div>
   );
 }
