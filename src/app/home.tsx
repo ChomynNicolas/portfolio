@@ -35,11 +35,11 @@ import profile from "../../public/profile2.jpg";
 import Image from "next/image";
 import { useEffect, useState } from "react";
 
-import { CSSTransition } from "react-transition-group";
+
 
 const myAnimatedIcons = [
   {
-    ubication: "flecha-up-animation middle top-2",
+    ubication: "flecha-up-animation  inset-0 mb-44",
     ubication2: "inset-0 mb-44",
     icono: up,
     label: "Sobre mi",
@@ -49,7 +49,7 @@ const myAnimatedIcons = [
     handler: handlers.handlerUp,
   },
   {
-    ubication: "flecha-down-animation middle  bottom-2 ",
+    ubication: "flecha-down-animation  inset-0   ",
     ubication2: "inset-0 ",
     icono: down,
     label: "Contactame",
@@ -60,7 +60,7 @@ const myAnimatedIcons = [
     handler: handlers.handlerDown,
   },
   {
-    ubication: "flecha-right-animation middle2 right-0 md:right-2",
+    ubication: "flecha-right-animation  inset-0 ml-36 sm:ml-44",
     ubication2: "inset-0 ml-48",
     icono: left,
     label: "Proyectos",
@@ -71,7 +71,7 @@ const myAnimatedIcons = [
     handler: handlers.handlerRight,
   },
   {
-    ubication: "flecha-left-animation middle2 left-0 md:left-2",
+    ubication: "flecha-left-animation  inset-0 mr-36 sm:mr-44",
     ubication2: "inset-0 mr-48",
     icono: right,
     label: "Proyectos",
@@ -162,6 +162,7 @@ export default function Home() {
           elemento={AnimatedIcons.elemento}
           handler={AnimatedIcons.handler}
           animation={animation}
+          animateOutDone={animateOutDone}
         />
       ))}
 
@@ -199,10 +200,10 @@ export default function Home() {
 
                       <section className="block   m-3">
                         <div className="pl-3">
-                          <h3 className="text-white font-bold text-3xl mb-2">
+                          <h3 className="text-white font-bold text-xl sm:text-3xl mb-2">
                             Nicolás Chomyn
                           </h3>
-                          <h3 className="bg-clip-text text-blue-300  text-lg font-bold">
+                          <h3 className="bg-clip-text text-blue-300  sm:text-lg font-bold">
                             Full Stack Developer
                           </h3>
                         </div>
@@ -231,7 +232,7 @@ export default function Home() {
                     </div>
                   </div>
                   <div className="flex-1 items-center w-60 px-5 sm:w-96  md:w-full  md:px-5 pb-5  bg-white opacity-70 rounded-3xl shadow-lg round">
-                    <h3 className="text-2xl text-black font-bold text-center mb-2">
+                    <h3 className="text-lg sm:text-2xl text-black font-bold text-center mb-2">
                       Sobre mi
                     </h3>
                     <p className="text-xs sm:text-sm md:text-lg text-black justify-start ">
@@ -247,29 +248,29 @@ export default function Home() {
                     </p>
                   </div>
                   <div className="flex-1 items-center px-5 py-5  bg-transparent rounded-3xl shadow-lg">
-                    <h3 className="text-2xl text-white font-bold text-center mb-6">
+                    <h3 className="text-lg sm:text-2xl text-white font-bold text-center mb-6">
                       Tecnologias
                     </h3>
                     <div className="flex flex-col gap-4">
                       <div className="flex gap-2 md:gap-5">
-                        <SiJavascript size={50} color="yellow" />
-                        <SiTypescript size={50} color="blue" />
-                        <FaReact size={50} color="blue" />
-                        <FaHtml5 size={50} color="#e34c26" />
-                        <FaCss3Alt size={50} color="blue" />
-                        <RiTailwindCssFill size={50} color="cyan" />
+                        <SiJavascript className="w-8 h-8 sm:w-12 sm:h-12" color="yellow"  />
+                        <SiTypescript className="w-8 h-8 sm:w-12 sm:h-12" color="blue" />
+                        <FaReact className="w-8 h-8 sm:w-12 sm:h-12" color="blue" />
+                        <FaHtml5 className="w-8 h-8 sm:w-12 sm:h-12" color="#e34c26" />
+                        <FaCss3Alt className="w-8 h-8 sm:w-12 sm:h-12" color="blue" />
+                        <RiTailwindCssFill className="w-8 h-8 sm:w-12 sm:h-12" color="cyan" />
                       </div>
                       <div className="flex gap-2 md:gap-5">
-                        <FaNodeJs size={50} color="green" />
-                        <SiMongodb size={50} color="green" />
-                        <GrMysql size={50} color="#49a4f5" />
-                        <SiSocketdotio size={50} color="white" />
+                        <FaNodeJs className="w-8 h-8 sm:w-12 sm:h-12" color="green" />
+                        <SiMongodb className="w-8 h-8 sm:w-12 sm:h-12" color="green" />
+                        <GrMysql className="w-8 h-8 sm:w-12 sm:h-12" color="#49a4f5" />
+                        <SiSocketdotio className="w-8 h-8 sm:w-12 sm:h-12" color="white" />
                         <RiNextjsFill
-                          size={50}
+                          className="w-8 h-8 sm:w-12 sm:h-12 bg-white rounded-full"
                           color="black"
-                          className="bg-white rounded-full"
+                          
                         />
-                        <FaGitAlt size={50} color="#ff5e37" />
+                        <FaGitAlt className="w-8 h-8 sm:w-12 sm:h-12" color="#ff5e37" />
                       </div>
                       <div className="flex"></div>
                     </div>

@@ -34,15 +34,20 @@ export const ContenedorProyecto = ({
 }: Props) => {
   return (
     <div className="grid lg:grid-cols-12 md:gap-4">
-      <div className=" lg:col-span-5 xl:col-span-4 flex items-center p-2 lg:p-5  ">
+      <div className=" lg:col-span-5 xl:col-span-4 flex items-center p-2 lg:p-5 sm:pt-10 lg:pt-0 ">
         <Carousel>
           {images.map((img, i) => (
             <Image
               key={i}
               src={img}
-              width={1000}
-              height={1000}
+              width={700}
+              height={400}
               alt={`imagen ${i}`}
+              style={{
+                maxWidth: "100%",
+                maxHeight: "100%",
+                objectFit: "cover",
+              }}
             />
           ))}
         </Carousel>

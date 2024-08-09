@@ -3,7 +3,7 @@ import { SiReact } from "react-icons/si";
 
 export const MiInfo = () => {
   return (
-    <div className="  max-w-[800px] rounded-md  p-5 ">
+    <div className=" max-w-[800px] rounded-md  p-5 ">
       <div className="flex  items-center justify-center gap-2 mb-2">
         <figure className="w-12 h-12 p-2 bg-blue-800 rounded-md">
           <SiReact size={34} />

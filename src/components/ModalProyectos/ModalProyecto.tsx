@@ -58,30 +58,31 @@ export const ModalProyecto = ({
     <>
       {isVisible ? (
         <div
-          className="relative z-10"
+          className="fixed z-10 "
           aria-labelledby="modal-title"
           role="dialog"
           aria-modal="true"
+          
         >
           <div
-            className="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity ease-out duration-300"
+            className="fixed inset-0  bg-gray-500 bg-opacity-75 transition-opacity ease-out duration-300 "
             aria-hidden="true"
           ></div>
-          <div className=" fixed inset-0 z-10 w-screen overflow-y-auto">
+          <div className=" fixed inset-0  z-10 overflow-y-auto max-h-screen max-w-screen">
             <div className="flex min-h-full items-end justify-center p-4 text-center sm:items-center sm:p-0 overflow-hidden">
               <div
                 ref={modalRef}
-                className={` transform overflow-hidden rounded-lg bg-white text-left shadow-xl transition-all ease-out duration-300 ${
+                className={` transform overflow-hidden  rounded-lg bg-white text-left shadow-xl transition-all ease-out duration-300 ${
                   isExiting ? modalAnimationExit : modalAnimation
                 } static`}
               >
                 <button
                     onClick={()=> setShowModal(false)}
-                    className="text-white hover:text-red-200 focus:outline-none absolute top-0 right-0"
+                    className="text-white hover:text-red-200  focus:outline-none absolute top-0 right-0"
                   >
                     <MdCancel size={50}/>
                   </button>
-                <div className="bg-gradient-to-r from-cyan-600 via-sky-700 to-blue-800 flex overflow-y-auto h-5/6  ">
+                <div className="bg-gradient-to-r from-cyan-600 via-sky-700 to-blue-800 flex overflow-y-auto h-5/6   ">
                 
                   {elemento}
                 </div>

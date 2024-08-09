@@ -11,6 +11,7 @@ interface Props {
   modalAnimationExit: string;
   elemento: React.ReactNode;
   animation: boolean;
+  animateOutDone:boolean;
   handler: (setShowModal: Function, e: KeyboardEvent) => void;
 }
 
@@ -23,6 +24,7 @@ export const AnimatedElement = ({
   elemento,
   handler,
   animation,
+  animateOutDone
 }: Props) => {
   const [showModal, setShowModal] = useState(false);
 
@@ -37,16 +39,16 @@ export const AnimatedElement = ({
 
   return (
     <div>
-      <div className={`element ${ubication} flex flex-col hover:text-gray-100`}>
+      <div className={`element ${ubication} flex flex-col hover:text-gray-100    `}>
         <div
           onClick={() => setShowModal((prev) => !prev)}
           className="iconoAnimado cursor-pointer"
         >
-          <Image src={icono} width={50} height={50} alt="mi icono" />
+          <Image src={icono}  alt="mi icono" className="w-8 h-8 sm:w-12 sm:h-12"/>
         </div>
-        <p className="text-gray-50 text-xs md:text-lg">{label}</p>
+        <p className="text-gray-50 text-xs md:text-lg ">{label}</p>
       </div>
-      {animation && (
+      {animateOutDone && (
         <ModalProyecto
           showModal={showModal}
           setShowModal={setShowModal}
