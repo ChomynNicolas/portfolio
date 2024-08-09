@@ -6,40 +6,45 @@ import imagen2 from "../../../public/mapmanager2.png";
 import imagen3 from "../../../public/mapmanager3.png";
 import imagen4 from "../../../public/mapmanager4.png";
 
-
 import imagen5 from "../../../public/pictureGame.png";
 import imagen6 from "../../../public/pictureGame2.png";
 import imagen7 from "../../../public/pictureGame3.png";
 
-import { SiCanvas, SiCssmodules, SiLeaflet, SiMongodb, SiMongoose, SiSocketdotio } from "react-icons/si";
+import {
+  SiCanvas,
+  SiCssmodules,
+  SiLeaflet,
+  SiMongodb,
+  SiMongoose,
+  SiSocketdotio,
+} from "react-icons/si";
 import { FaReact } from "react-icons/fa";
-
 
 const myProyects = [
   {
-    images: [imagen1,imagen2,imagen3,imagen4],
+    images: [imagen1, imagen2, imagen3, imagen4],
     title: "Map Manager",
     content:
-      "MapManager es una aplicación que permite a los usuarios crear y seguir eventos con ubicaciones en un mapa y un calendario. Utilizando MongoDB y Mongoose, se desarrolló la base de datos. La funcionalidad de ubicación del usuario se implementó con Leaflet, permitiendo guardar la ubicación junto con los datos del formulario en la base de datos. La interfaz de usuario fue creada con React.js y CSS Modules, asegurando una experiencia intuitiva y visualmente atractiva para los usuarios.",
+      "MapManager es una aplicación que permite a los usuarios crear y seguir eventos en un mapa y calendario. La base de datos fue desarrollada con MongoDB y Mongoose, mientras que la funcionalidad de ubicación se implementó con Leaflet, permitiendo guardar la ubicación junto con los datos del formulario. La interfaz de usuario, creada con React.js y CSS Modules, ofrece una experiencia intuitiva y visualmente atractiva.",
     link: [
       {
-        title: 'Pagina web',
+        title: "Pagina web",
         link: "https://master.durqva7i188r1.amplifyapp.com/",
       },
       {
-        title: 'Repositorio del FrontEnd',
+        title: "Repositorio del FrontEnd",
         link: "https://github.com/AlejandroDojo/MapManager",
       },
       {
-        title: 'Repositorio del BackEnd',
+        title: "Repositorio del BackEnd",
         link: "https://github.com/AlejandroDojo/MapManager-Backend",
-      }
+      },
     ],
     tecnologias: [
       {
         title: "Base de datos:",
         desc: "Mongodb",
-        icon: <SiMongodb color="green"  size={45} />,
+        icon: <SiMongodb color="green" size={45} />,
       },
       {
         title: "ODM:",
@@ -49,37 +54,36 @@ const myProyects = [
       {
         title: "Geolocalización y mapas:",
         desc: "Leaflet",
-        icon: <SiLeaflet color="green"  size={35} />,
+        icon: <SiLeaflet color="green" size={35} />,
       },
       {
         title: "Frontend:",
         desc: "React.js",
-        icon: <FaReact  color="#58b5ff"  size={35} />,
+        icon: <FaReact color="#58b5ff" size={35} />,
       },
       {
         title: "Estilos:",
         desc: "CSS Modules",
-        icon: <SiCssmodules  size={35} />,
+        icon: <SiCssmodules size={35} />,
       },
     ],
   },
   {
-    images: [imagen5,imagen6,imagen7],
+    images: [imagen5, imagen6, imagen7],
     title: "PictureGame",
     content:
       "PictureGame es un juego de dibujo multijugador que permite a los usuarios dibujar y adivinar en tiempo real mientras interactúan a través de un chat en vivo. La integración de Socket.io con el elemento canvas en React.js permite compartir los dibujos instantáneamente entre los jugadores. Un chat en tiempo real, también implementado con Socket.io, permite a los usuarios escribir y enviar respuestas para resolver el juego.",
-      link: [
-        {
-          title: 'Pagina web',
-          link: "https://socket-game-xi.vercel.app/",
-        },
-        {
-          title: 'Repositorio',
-          link: "https://github.com/ChomynNicolas/multiplayerGame",
-        }
-        
-      ],
-    
+    link: [
+      {
+        title: "Pagina web",
+        link: "https://socket-game-xi.vercel.app/",
+      },
+      {
+        title: "Repositorio",
+        link: "https://github.com/ChomynNicolas/multiplayerGame",
+      },
+    ],
+
     tecnologias: [
       {
         title: "WebSockets:",
@@ -89,16 +93,15 @@ const myProyects = [
       {
         title: "Canvas:",
         desc: "Integración con React.js",
-        icon: <SiCanvas color="red"  size={35} />,
+        icon: <SiCanvas color="red" size={35} />,
       },
       {
         title: "Frontend:",
         desc: "React.js",
-        icon: <FaReact  color="#58b5ff"  size={35} />,
+        icon: <FaReact color="#58b5ff" size={35} />,
       },
     ],
   },
-  
 ];
 
 export const Proyectos = () => (

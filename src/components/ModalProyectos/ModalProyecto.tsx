@@ -58,7 +58,7 @@ export const ModalProyecto = ({
     <>
       {isVisible ? (
         <div
-          className="fixed z-10 "
+          className="fixed z-10  "
           aria-labelledby="modal-title"
           role="dialog"
           aria-modal="true"
@@ -82,7 +82,7 @@ export const ModalProyecto = ({
                   >
                     <MdCancel size={50}/>
                   </button>
-                <div className="bg-gradient-to-r from-cyan-600 via-sky-700 to-blue-800 flex overflow-y-auto h-5/6   ">
+                <div className="bg-gradient-to-r from-cyan-600 via-sky-700 to-blue-800 flex overflow-y-auto h-5/6 border-4   ">
                 
                   {elemento}
                 </div>

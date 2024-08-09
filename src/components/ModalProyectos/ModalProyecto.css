@@ -13,7 +13,7 @@
     opacity: 0;
   }
   to {
-    transform: translateY(0);
+    transform: translateY(50%);
     opacity: 1;
   }
 }
@@ -98,7 +98,8 @@
 .modal-animation-up {
   animation: slideDown 1s ease-out forwards;
   position: fixed;
-  bottom: 60%;
+  bottom: 55%;
+  
   
   
 }
@@ -106,9 +107,25 @@
 .modal-animation-down {
   animation: slideUp 1s ease-out forwards;
   position: fixed;
-  top: 50%;
+  top: 55%;
   
   
+}
+
+@media (max-width: 650px) {
+  .modal-animation-up {
+    /* Estilos para pantallas menores a 650px */
+    bottom: 55%; /* ajusta el valor según sea necesario */
+    overflow-y: auto; /* permite scrollear el contenido */
+    max-height: 80vh; /* ajusta el valor según sea necesario */
+  }
+  
+  .modal-animation-down {
+    /* Estilos para pantallas menores a 650px */
+    top: 45%; /* ajusta el valor según sea necesario */
+    overflow-y: auto; /* permite scrollear el contenido */
+    max-height: 80vh; /* ajusta el valor según sea necesario */
+  }
 }
 
 
