@@ -39,8 +39,8 @@ import { useEffect, useState } from "react";
 
 const myAnimatedIcons = [
   {
-    ubication: "flecha-up-animation  inset-0 mb-44",
-    ubication2: "inset-0 mb-44",
+    ubication: "flecha-up-animation  inset-0 mb-32 sm:mb-44",
+    ubication2: "inset-0 mb-32 sm:mb-44",
     icono: up,
     label: "Sobre mi",
     modalAnimation: "modal-animation-up",
@@ -60,8 +60,8 @@ const myAnimatedIcons = [
     handler: handlers.handlerDown,
   },
   {
-    ubication: "flecha-right-animation  inset-0 ml-36 sm:ml-44",
-    ubication2: "inset-0 ml-48",
+    ubication: "flecha-right-animation  inset-0 ml-32 sm:ml-40",
+    ubication2: "inset-0 ml-32 sm:ml-48",
     icono: left,
     label: "Proyectos",
     modalAnimation: "modal-animation-left",
@@ -71,8 +71,8 @@ const myAnimatedIcons = [
     handler: handlers.handlerRight,
   },
   {
-    ubication: "flecha-left-animation  inset-0 mr-36 sm:mr-44",
-    ubication2: "inset-0 mr-48",
+    ubication: "flecha-left-animation  inset-0 mr-32 sm:mr-40",
+    ubication2: "inset-0 mr-32 sm:mr-48",
     icono: right,
     label: "Proyectos",
     modalAnimation: "modal-animation-rigth",
@@ -142,7 +142,7 @@ export default function Home() {
   return (
     <div className={`App  `}>
       <div
-        className={`absolute text-3xl md:text-6xl font-mono text-bold text-white top-44 md:top-52 text-center ${
+        className={`absolute text-3xl md:text-6xl font-mono text-bold text-white top-20 md:top-52 text-center ${
           animation ? "animate-out" : ""
         } ${animateOutDone ? "animate-out-done" : ""}`}
       >

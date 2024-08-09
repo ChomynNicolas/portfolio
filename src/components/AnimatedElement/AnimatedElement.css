@@ -93,7 +93,7 @@ html,
     opacity: 0.5;
   }
   to {
-    transform: translateX(calc(-42vw + 100px));
+    transform: translateX(calc(-42vw + 80px));
     opacity: 1;
   }
 }
@@ -109,7 +109,7 @@ html,
     opacity: 0.5;
   }
   to {
-    transform: translateX(calc(42vw - 100px));
+    transform: translateX(calc(42vw - 80px));
     opacity: 1;
   }
 }

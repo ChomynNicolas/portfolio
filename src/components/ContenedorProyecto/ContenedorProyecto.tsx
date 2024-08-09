@@ -5,6 +5,7 @@ import React from "react";
 
 import { InfoProyectos } from "./components/InfoProyectos";
 import { Carousel } from "../carousel/Carousel";
+import { NewContenedorProyecto } from "./components/NewContenedorProyecto";
 
 interface Link {
   title: string;
@@ -33,8 +34,9 @@ export const ContenedorProyecto = ({
   tecnologias,
 }: Props) => {
   return (
+    
     <div className="grid lg:grid-cols-12 md:gap-4">
-      <div className=" lg:col-span-5 xl:col-span-4 flex items-center p-2 lg:p-5 sm:pt-10 lg:pt-0 ">
+      <div className=" lg:col-span-5 xl:col-span-4 flex items-center max-w-[600px] max-h-[600px] p-2 lg:p-5 sm:pt-10 lg:pt-0 ">
         <Carousel>
           {images.map((img, i) => (
             <Image
