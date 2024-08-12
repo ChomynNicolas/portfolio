@@ -34,6 +34,7 @@ import down from "../../public/abajo.png";
 import profile from "../../public/profile2.jpg";
 import Image from "next/image";
 import { useEffect, useState } from "react";
+import { Contact } from "@/components/contact/Contact";
 
 
 
@@ -56,7 +57,7 @@ const myAnimatedIcons = [
     modalAnimation: "modal-animation-down",
     modalAnimationExit: "modal-animation-up-exit",
 
-    elemento: <MiInfo />,
+    elemento: <Contact />,
     handler: handlers.handlerDown,
   },
   {
@@ -127,6 +128,7 @@ export default function Home() {
     if (animation) {
       setTimeout(() => {
         setAnimateOutDone(true);
+        
       }, 2500); 
     }
   }, [animation]);
@@ -193,7 +195,7 @@ export default function Home() {
                           src={profile}
                           width={400}
                           height={400}
-                          className="rounded-full"
+                          className="rounded-full z-10"
                           alt="mi perfil"
                         />
                       </section>
@@ -210,12 +212,12 @@ export default function Home() {
                       </section>
                     </div>
 
-                    <div className="flex w-max gap-1 pt-2 mt-4">
+                    <div className="flex w-max gap-1 pt-2 mt-4 z-10">
                       <a
                         href="https://github.com/ChomynNicolas"
                         target="_blank"
                       >
-                        <button className="flex gap-1 cursor-pointer text-white font-semibold bg-gradient-to-r from-gray-800 to-black px-3 py-1 rounded-full border border-gray-600 hover:scale-105 duration-200 hover:text-gray-500 hover:border-gray-800 hover:from-black hover:to-gray-900">
+                        <button className="flex gap-1  cursor-pointer text-white font-semibold bg-gradient-to-r from-gray-800 to-black px-3 py-1 rounded-full border border-gray-600 hover:scale-105 duration-200 hover:text-gray-500 hover:border-gray-800 hover:from-black hover:to-gray-900">
                           <FaGithub size={25} />
                           Github
                         </button>
@@ -224,7 +226,7 @@ export default function Home() {
                         href="https://www.linkedin.com/in/nicolás-chomyn"
                         target="_blank"
                       >
-                        <button className="flex gap-1 cursor-pointer text-white font-semibold bg-gradient-to-r from-blue-600 to-blue-800 px-3 py-1 rounded-full border border-blue-600 hover:scale-105 duration-200 hover:text-white hover:border-blue-800 hover:from-blue-600 hover:to-blue-800">
+                        <button className="flex gap-1  cursor-pointer text-white font-semibold bg-gradient-to-r from-blue-600 to-blue-800 px-3 py-1 rounded-full border border-blue-600 hover:scale-105 duration-200 hover:text-white hover:border-blue-800 hover:from-blue-600 hover:to-blue-800">
                           <FaLinkedin size={25} />
                           LinkedIn
                         </button>

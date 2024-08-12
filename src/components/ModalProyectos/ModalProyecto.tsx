@@ -58,7 +58,7 @@ export const ModalProyecto = ({
     <>
       {isVisible ? (
         <div
-          className="fixed z-10  "
+          className="fixed z-50  "
           aria-labelledby="modal-title"
           role="dialog"
           aria-modal="true"
