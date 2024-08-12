@@ -82,7 +82,7 @@ export const ModalProyecto = ({
                   >
                     <MdCancel size={50}/>
                   </button>
-                <div className="bg-gradient-to-r from-cyan-600 via-sky-700 to-blue-800 flex overflow-y-auto h-5/6 border-4   ">
+                <div className="bg-gradient-to-r from-cyan-600 via-sky-700 to-blue-800 flex overflow-y-auto  border-4   ">
                 
                   {elemento}
                 </div>
